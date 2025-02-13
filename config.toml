@@ -1,0 +1,75 @@
+#####
+# Analysis input files and output directory names
+#####
+
+# survey path
+BASE_PATH = 'I:/Modeling and Analysis Group/03_Data/Surveys/NHTS_2017'
+
+#####
+# Configure the required column names and income limit for household dataframe
+# hhincome_xxxx_lowerbnd == INCOME_LIMIT+1 and hhincome_xxxx_upperbnd == INCOME_LIMIT+1: Prefer not to answer
+# The above code "INCOME_LIMIT+1" is just for later sorting the dataframe (sorting the option "Prefer not to answer" after the maximum income option)
+# hhincome_xxxx_upperbnd == INCOME_LIMIT: $xxx,xxx or more
+# hhincome_xxxx_lowerbnd == 0: Under $xx,xxx
+#####
+
+
+CITIES = ['Bellevue', 'Kirkland', 'Redmond']
+JURISDICTION_COLUMN = []
+
+# config household columns
+INCOME_COLUMN = 'HHFAMINC' 
+HOUSEHOLD_SIZE_COLUMN = 'HHSIZE'
+HOUSEHOLD_WEIGHT_COLUMN = 'WTHHFIN'
+HOUSEHOLD_ID_COLUMN = 'HOUSEID'
+
+
+# configure weekday conditions and columns
+WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday']
+
+# configure trip columns
+TRIP_COLUMN = 'TDCASEID'
+TRIP_WEIGHT_COLUMN = 'WTTRDFIN'
+MODE_CATEGORY_COLUMN = 'TRPTRANS'
+DISTANCE_COLUMN = 'TRPMILES'
+JOURNEY_TIME_COLUMN = 'TRVLCMIN'
+TRIP_DEST_PURP = 'WHYTO'
+TRIP_ORIGIN_PURP = 'WHYFROM'
+SELECTED_TRIP_COLS = ["TDCASEID", "HOUSEID","PERSONID","TDTRPNUM","TRAVDAY","STRTTIME","ENDTIME","TRVLCMIN","TRPMILES","TRPTRANS","WHYFROM","LOOP_TRIP","WHYTO","TRIPPURP","TDWKND","HHFAMINC","TDAYDATE","WTTRDFIN"]
+GOODMONTH_FOR_BIKE = ['04','05','06','07','08','09','10','11']
+TRIP_PURP_4STEP = "TRIPPURP"
+
+#####
+# Other setting
+#####
+DEBUG = 1
+FONT_SIZE = 14
+PALETTE = ['tab:blue', 'tab:green', 'tab:red', 'tab:orange', 'tab:purple']
+PALETTE_COMPARE = ['#00C0C0', '#006598', 'tab:orange']
+
+[NHTS_PURP_DICT]
+-9 = "Not ascertained"
+-8 = "I don't know"
+-7 = "No answer"
+01 = "Home"
+02 = "WFH"
+03 = "Work"
+04 = "Work-related"
+05 = "Volunteering"
+06 = "Drop off /pick up"
+07 = "Change mode"
+08 = "School"
+09 = "Attend child care"
+10 = "Attend adult care"
+11 = "Shopping"
+12 = "Services (dry cleaners, banking, service a car, pet care)"
+13 = "Meal"
+14 = "Other general errands (post office, library)"
+15 = "Recreational (visit parks, movies, bars, museums)"
+16 = "Exercise (go for a jog, walk, walk the dog, go to the gym)"
+17 = "Social"
+18 = "Medical"
+19 = "Religious or other community activities"
+97 = "Others"
+
+
